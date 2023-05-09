@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useStateValue } from "./Components/StateProvider";
 import { auth } from "./firebaseConfig";
+import { ReactNotifications } from "react-notifications-component";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ReactNotifications />
       <Routes>
         <Route
           path="/"

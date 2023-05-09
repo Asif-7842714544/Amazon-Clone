@@ -17,7 +17,7 @@ function CheckOut() {
           <h3>{user?.email}</h3>
           <h2 className="mr-[10px] p-[10px] border-b-2 ">The Shopping Cart</h2>
           {/* CartItem */}
-          {basket?.map((item, i) => (
+            {basket?.map((item, i) => (
             <CheckOutBasketItems
               key={i}
               id={item.id}
@@ -27,6 +27,8 @@ function CheckOut() {
               rating={item.rating}
             />
           ))}
+       
+          
         </div>
       </div>
 

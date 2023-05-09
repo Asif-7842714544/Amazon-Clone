@@ -6,18 +6,27 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import Spinner from "./Spinner";
+import LoadingButton from '@mui/lab/LoadingButton';
+import SaveIcon from '@mui/icons-material/Save';
+import Stack from '@mui/material/Stack';
 
 function LoginPage() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const [loading, setloading] = useState(false);
+
+
 
   const navigate = useNavigate();
   const signIn = (e) => {
     e.preventDefault();
+    setloading(true)
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         if (userCredential) navigate("/");
+        setloading(false);
       })
 
       .catch((error) => {
@@ -36,8 +45,9 @@ function LoginPage() {
         console.log(error);
       });
   };
-  return (
+  return ( 
     <div className="flex flex-col items-center h-[100vh] bg-white ">
+   
       <Link to="/">
         <img
           className="mt-5 mb-5 object-contain w-[100px] mr-auto ml-auto"
@@ -66,7 +76,6 @@ function LoginPage() {
             className="h-[30px] mb-2 bg-white w-[98%] rounded-[4px] border-2 border-solid p-3 "
             type="password"
           />
-
           <button
             type="submit"
             onClick={signIn}

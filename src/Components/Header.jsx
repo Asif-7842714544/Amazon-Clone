@@ -12,7 +12,7 @@ const handleAurhentication=()=>{
   }
 }
   return (
-    <div className="h-[60px]  flex items-center bg-black sticky top-0 z-100 text-white ">
+    <div className="h-[60px]  flex items-center bg-black sticky top-0 z-[10] text-white ">
       <Link to="/">
         <img
           className="w-[150px] mt-4 mr-2 ml-2   "
@@ -21,7 +21,7 @@ const handleAurhentication=()=>{
       </Link>
 
       <div className="flex flex-1 items-center rounded-3xl  ">
-        <input type="text" className="h-3 p-[12px] border-none w-full " />
+        <input type='text' className="h-3 p-[12px] border-none w-full " />
         <Search className="bg-orange-700 p-1 " fontSize="medium" />
       </div>
       <div className="flex justify-evenly ">
