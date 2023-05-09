@@ -27,7 +27,7 @@ function Home() {
           <SimpleImageSlider
             autoPlay
             slideDuration={0.4}
-            width={1400}
+            width={1200}
             height={504}
             images={images}
             showBullets={true}
